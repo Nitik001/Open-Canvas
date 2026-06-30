@@ -155,7 +155,6 @@ export default async function ArticlePage({ params }: PageProps) {
               {/* MDX Body */}
               <div
                 className="prose max-w-none prose-blog"
-                style={{ "--tw-prose-body": "var(--text-secondary)" } as React.CSSProperties}
                 itemProp="articleBody"
               >
                 <MDXRemote

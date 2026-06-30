@@ -46,19 +46,28 @@ export function StatementCanvas() {
 
         {/* ── Illustration ── */}
         <motion.div 
-          className="relative w-full max-w-4xl aspect-[4/3] sm:aspect-[16/9] flex items-center justify-center overflow-hidden rounded-2xl shadow-2xl shadow-slate-200/50 bg-white"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          className="relative w-full max-w-5xl aspect-[4/3] sm:aspect-[16/9] flex items-center justify-center pointer-events-none select-none mix-blend-multiply"
+          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          <Image
-            src="/statement-illustration.jpg"
-            alt="An artist drawing geopolitics, economic affairs, and public policy flowing onto a canvas"
-            fill
-            className="object-cover object-center"
-            priority
-          />
+          {/* A radial gradient mask guarantees the outer edges gracefully fade out into the white background, ensuring total immersion */}
+          <div 
+            className="absolute inset-0"
+            style={{ 
+              WebkitMaskImage: 'radial-gradient(ellipse at center, black 60%, transparent 100%)',
+              maskImage: 'radial-gradient(ellipse at center, black 60%, transparent 100%)'
+            }}
+          >
+            <Image
+              src="/statement-illustration.jpg"
+              alt="An artist drawing geopolitics, economic affairs, and public policy flowing onto a canvas"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+          </div>
         </motion.div>
 
       </div>

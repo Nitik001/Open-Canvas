@@ -45,23 +45,31 @@ export function StatementCanvas() {
         </motion.div>
       </div>
 
-      {/* ── Full-Bleed Illustration ── */}
+      {/* ── Immersive Illustration ── */}
       <motion.div 
-        className="relative w-full h-[50vh] sm:h-[60vh] lg:h-[80vh] min-h-[400px] pointer-events-none select-none mix-blend-multiply mt-8 overflow-hidden"
+        className="relative w-full max-w-[1600px] mx-auto aspect-[16/9] pointer-events-none select-none mix-blend-multiply mt-4 md:mt-8"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
       >
-        {/* Using object-cover and object-left anchors the artist to the left, 
-            while the flowing ribbons stretch limitlessly off the right side of the screen. */}
-        <Image
-          src="/statement-illustration.jpg"
-          alt="An artist drawing geopolitics, economic affairs, and public policy flowing onto a canvas"
-          fill
-          className="object-cover object-left md:object-left-bottom"
-          priority
-        />
+        {/* We use a mask to gracefully fade out the right edge of the flowing ribbons, 
+            so they seamlessly dissolve into the page without a hard cutoff line. */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            WebkitMaskImage: 'linear-gradient(to right, black 85%, transparent 100%)',
+            maskImage: 'linear-gradient(to right, black 85%, transparent 100%)'
+          }}
+        >
+          <Image
+            src="/statement-illustration.jpg"
+            alt="An artist drawing geopolitics, economic affairs, and public policy flowing onto a canvas"
+            fill
+            className="object-contain object-left"
+            priority
+          />
+        </div>
       </motion.div>
     </section>
   );

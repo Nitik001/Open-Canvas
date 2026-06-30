@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export function StatementCanvas() {
   return (
-    <section className="relative w-full bg-white pb-32">
+    <section className="relative w-full bg-white pb-32 overflow-hidden">
       {/* ── Curved Section Separator ── */}
       {/* The background of the SVG matches the hero above it, while the filled path is white to transition smoothly into this section. */}
       <div className="w-full overflow-hidden leading-none z-10 relative -mt-[1px]">
@@ -33,7 +33,7 @@ export function StatementCanvas() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 relative z-20"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-6">
             Reshaping the Global Canvas
@@ -47,19 +47,21 @@ export function StatementCanvas() {
 
       {/* ── Immersive Illustration ── */}
       <motion.div 
-        className="relative w-full max-w-[1600px] mx-auto aspect-[16/9] pointer-events-none select-none mix-blend-multiply mt-4 md:mt-8"
+        className="relative w-full max-w-[1400px] mx-auto aspect-[16/9] pointer-events-none select-none mix-blend-multiply mt-4 md:mt-8"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
       >
-        {/* We use a mask to gracefully fade out the right edge of the flowing ribbons, 
-            so they seamlessly dissolve into the page without a hard cutoff line. */}
+        {/* We scale the image up drastically (scale-[1.3]) from the left origin. 
+            Because the image has empty white borders from the AI generation, scaling it up 
+            effectively crops out the empty space and makes the artist huge and immersive. 
+            The mask fades out the right edge. */}
         <div 
-          className="absolute inset-0"
+          className="absolute inset-0 origin-left scale-[1.25] sm:scale-[1.35] md:scale-[1.45] translate-x-[2%]"
           style={{
-            WebkitMaskImage: 'linear-gradient(to right, black 85%, transparent 100%)',
-            maskImage: 'linear-gradient(to right, black 85%, transparent 100%)'
+            WebkitMaskImage: 'linear-gradient(to right, black 80%, transparent 100%)',
+            maskImage: 'linear-gradient(to right, black 80%, transparent 100%)'
           }}
         >
           <Image

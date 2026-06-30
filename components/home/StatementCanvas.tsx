@@ -43,29 +43,26 @@ export function StatementCanvas() {
             economic shifts, and the geopolitical landscape of tomorrow.
           </p>
         </motion.div>
-
-        {/* ── Illustration ── */}
-        <motion.div 
-          className="relative w-full max-w-6xl aspect-[4/3] sm:aspect-[16/9] flex items-center justify-center pointer-events-none select-none mix-blend-multiply md:scale-105 mt-4"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-        >
-          {/* Using mix-blend-multiply on a pure white image forces all white pixels to become perfectly transparent. 
-              With no mask, the vivid colors and ribbons bleed directly into the section's white background. */}
-          <div className="absolute inset-0">
-            <Image
-              src="/statement-illustration.jpg"
-              alt="An artist drawing geopolitics, economic affairs, and public policy flowing onto a canvas"
-              fill
-              className="object-contain object-center"
-              priority
-            />
-          </div>
-        </motion.div>
-
       </div>
+
+      {/* ── Full-Bleed Illustration ── */}
+      <motion.div 
+        className="relative w-full h-[50vh] sm:h-[60vh] lg:h-[80vh] min-h-[400px] pointer-events-none select-none mix-blend-multiply mt-8 overflow-hidden"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+      >
+        {/* Using object-cover and object-left anchors the artist to the left, 
+            while the flowing ribbons stretch limitlessly off the right side of the screen. */}
+        <Image
+          src="/statement-illustration.jpg"
+          alt="An artist drawing geopolitics, economic affairs, and public policy flowing onto a canvas"
+          fill
+          className="object-cover object-left md:object-left-bottom"
+          priority
+        />
+      </motion.div>
     </section>
   );
 }

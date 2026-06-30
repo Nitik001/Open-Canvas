@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/home/Hero";
-import { BentoGrid } from "@/components/home/BentoGrid";
+import { StatementCanvas } from "@/components/home/StatementCanvas";
 import { getAllPosts } from "@/lib/mdx";
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <BentoGrid posts={posts} />
+      <StatementCanvas />
     </>
   );
 }

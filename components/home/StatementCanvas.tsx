@@ -46,25 +46,20 @@ export function StatementCanvas() {
 
         {/* ── Illustration ── */}
         <motion.div 
-          className="relative w-full max-w-5xl aspect-[4/3] sm:aspect-[16/9] flex items-center justify-center pointer-events-none select-none mix-blend-multiply"
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          className="relative w-full max-w-6xl aspect-[4/3] sm:aspect-[16/9] flex items-center justify-center pointer-events-none select-none mix-blend-multiply md:scale-105 mt-4"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
         >
-          {/* A radial gradient mask guarantees the outer edges gracefully fade out into the white background, ensuring total immersion */}
-          <div 
-            className="absolute inset-0"
-            style={{ 
-              WebkitMaskImage: 'radial-gradient(ellipse at center, black 60%, transparent 100%)',
-              maskImage: 'radial-gradient(ellipse at center, black 60%, transparent 100%)'
-            }}
-          >
+          {/* Using mix-blend-multiply on a pure white image forces all white pixels to become perfectly transparent. 
+              With no mask, the vivid colors and ribbons bleed directly into the section's white background. */}
+          <div className="absolute inset-0">
             <Image
               src="/statement-illustration.jpg"
               alt="An artist drawing geopolitics, economic affairs, and public policy flowing onto a canvas"
               fill
-              className="object-cover object-center"
+              className="object-contain object-center"
               priority
             />
           </div>

@@ -114,6 +114,17 @@ export default async function ArticlePage({ params }: PageProps) {
                   {post.title}
                 </h1>
 
+                {/* Author Byline */}
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[var(--accent)] to-purple-500 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-[var(--accent)]/20 ring-2 ring-[var(--surface-raised)]">
+                    NN
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-text-primary font-medium text-sm" itemProp="author">Nitik Negi</span>
+                    <span className="text-[var(--accent)] text-xs font-medium uppercase tracking-wider">Writer</span>
+                  </div>
+                </div>
+
                 {/* Description */}
                 <p className="text-lg text-text-secondary leading-relaxed mb-6 max-w-2xl">
                   {post.description}
@@ -121,12 +132,6 @@ export default async function ArticlePage({ params }: PageProps) {
 
                 {/* Meta row */}
                 <div className="flex flex-wrap items-center gap-4 text-text-muted text-sm pb-8 mb-8 border-b border-[var(--border)]">
-                  {post.author && (
-                    <span className="flex items-center gap-1.5">
-                      <User size={14} />
-                      <span itemProp="author">{post.author}</span>
-                    </span>
-                  )}
                   <span className="flex items-center gap-1.5">
                     <Calendar size={14} />
                     <time dateTime={post.date} itemProp="datePublished">

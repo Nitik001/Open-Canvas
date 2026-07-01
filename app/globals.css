@@ -253,3 +253,50 @@ body {
 .page-enter {
   animation: page-fade-in 0.4s ease-out forwards;
 }
+
+/* =====================================================
+   MOBILE OPTIMISATIONS
+   ===================================================== */
+
+/* Fluid prose font on small screens */
+@media (max-width: 640px) {
+  .prose-blog {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  .prose-blog h2 {
+    font-size: 1.35rem;
+    margin-top: 2rem;
+  }
+  .prose-blog h3 {
+    font-size: 1.15rem;
+    margin-top: 1.5rem;
+  }
+  .prose-blog p {
+    margin-bottom: 1.1rem;
+  }
+  .prose-blog ul,
+  .prose-blog ol {
+    padding-left: 1.25rem;
+  }
+  /* Make images inside articles responsive */
+  .prose-blog img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 10px;
+  }
+}
+
+/* Larger tap targets for nav links on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Prevent horizontal overflow on all viewports */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}

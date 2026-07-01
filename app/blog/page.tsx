@@ -12,17 +12,17 @@ export default function BlogPage() {
   const categories = getAllCategories();
 
   return (
-    <div className="min-h-screen pt-24 pb-20">
+    <div className="min-h-screen pt-20 sm:pt-24 pb-16 sm:pb-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Page header */}
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-12">
           <p className="text-accent text-xs font-semibold uppercase tracking-widest mb-3">
             Analysis
           </p>
-          <h1 className="text-4xl sm:text-5xl font-bold text-text-primary tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-5xl font-bold text-text-primary tracking-tight mb-3 sm:mb-4">
             All Analysis
           </h1>
-          <p className="text-text-secondary text-lg max-w-xl">
+          <p className="text-text-secondary text-base sm:text-lg max-w-xl">
             Rigorous, independent perspectives on the geopolitical shifts, macroeconomic trends,
             and policy decisions shaping the global order.
           </p>

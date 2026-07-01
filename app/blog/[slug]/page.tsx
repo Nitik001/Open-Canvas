@@ -80,7 +80,7 @@ export default async function ArticlePage({ params }: PageProps) {
       <article className="min-h-screen pt-20" itemScope itemType="https://schema.org/BlogPosting">
         {/* Hero Image */}
         {post.coverImage && (
-          <div className="relative h-[50vh] max-h-[520px] w-full overflow-hidden">
+          <div className="relative h-[40vh] sm:h-[50vh] max-h-[520px] w-full overflow-hidden">
             <Image
               src={post.coverImage}
               alt={post.title}
@@ -108,7 +108,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
                 {/* Title */}
                 <h1
-                  className="text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary tracking-tight leading-tight mb-6"
+                  className="text-2xl sm:text-3xl lg:text-5xl font-bold text-text-primary tracking-tight leading-tight mb-5"
                   itemProp="headline"
                 >
                   {post.title}
@@ -131,7 +131,7 @@ export default async function ArticlePage({ params }: PageProps) {
                 </p>
 
                 {/* Meta row */}
-                <div className="flex flex-wrap items-center gap-4 text-text-muted text-sm pb-8 mb-8 border-b border-[var(--border)]">
+                <div className="flex flex-wrap items-center gap-3 text-text-muted text-xs sm:text-sm pb-6 mb-6 border-b border-[var(--border)]">
                   <span className="flex items-center gap-1.5">
                     <Calendar size={14} />
                     <time dateTime={post.date} itemProp="datePublished">
@@ -142,7 +142,7 @@ export default async function ArticlePage({ params }: PageProps) {
                     <Clock size={14} />
                     {post.readingTime} min read
                   </span>
-                  <span className="text-text-muted text-xs ml-auto">
+                  <span className="text-text-muted text-xs">
                     {post.wordCount.toLocaleString()} words
                   </span>
                 </div>

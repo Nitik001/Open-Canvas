@@ -64,7 +64,7 @@ function BentoCard({
         "glass-card group relative rounded-2xl overflow-hidden",
         layout.colSpan,
         layout.rowSpan,
-        isLarge ? "min-h-[380px]" : "min-h-[180px]"
+        isLarge ? "min-h-[340px]" : "min-h-[200px] sm:min-h-[180px]"
       )}
     >
       <Link href={`/blog/${post.slug}`} className="block h-full" tabIndex={0}>
@@ -134,7 +134,7 @@ export function BentoGrid({ posts }: BentoGridProps) {
   const visiblePosts = posts.slice(0, 5);
 
   return (
-    <section className="max-w-6xl mx-auto px-4 sm:px-6 py-20">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 py-14 sm:py-20">
       {/* Section header */}
       <motion.div
         className="flex items-center justify-between mb-10"
@@ -153,7 +153,7 @@ export function BentoGrid({ posts }: BentoGridProps) {
         </div>
         <Link
           href="/blog"
-          className="hidden sm:flex items-center gap-1.5 text-accent text-sm font-medium hover:gap-2.5 transition-all duration-200"
+          className="flex items-center gap-1.5 text-accent text-sm font-medium hover:gap-2.5 transition-all duration-200"
         >
           View all <ArrowUpRight size={14} />
         </Link>
@@ -165,7 +165,7 @@ export function BentoGrid({ posts }: BentoGridProps) {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-80px" }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-auto"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 auto-rows-auto"
       >
         {visiblePosts.map((post, i) => (
           <BentoCard

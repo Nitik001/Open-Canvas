@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function StatementCanvas() {
   return (
-    <section className="relative w-full bg-white pb-24 overflow-hidden">
+    <section className="relative w-full bg-white pb-12 sm:pb-24 overflow-hidden">
       {/* ── Curved Section Separator ── */}
       <div className="w-full overflow-hidden leading-none z-10 relative -mt-[1px]">
         <svg
@@ -30,10 +30,10 @@ export function StatementCanvas() {
         transition={{ duration: 0.6 }}
         className="text-center mb-8 relative z-20 px-4"
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-4">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight mb-3 sm:mb-4">
           Reshaping the Global Canvas
         </h2>
-        <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+        <p className="text-slate-500 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed px-2 sm:px-0">
           Our analysis draws the connections between complex policy decisions,
           economic shifts, and the geopolitical landscape of tomorrow.
         </p>
@@ -46,7 +46,7 @@ export function StatementCanvas() {
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 1.0, ease: "easeOut" }}
         className="relative w-full max-w-[1100px] mx-auto px-4"
-        style={{ height: "clamp(280px, 45vw, 520px)" }}
+        style={{ height: "clamp(220px, 55vw, 520px)" }}
       >
         {/* ── AMBIENT GLOW ── */}
         <div

@@ -7,7 +7,7 @@ import { WorldMap } from "./WorldMap";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[96vh] flex flex-col items-center justify-center overflow-hidden px-4">
+    <section className="relative min-h-[100svh] flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6">
       {/* ── World Map Background ── */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none" aria-hidden="true">
         {/* Radial vignette that fades the map at edges */}
@@ -84,7 +84,7 @@ export function Hero() {
 
         {/* Main headline */}
         <motion.h1
-          className="text-5xl sm:text-6xl lg:text-[5.5rem] font-bold text-text-primary leading-[1.05] tracking-tight mb-6"
+          className="text-4xl sm:text-5xl lg:text-[5.5rem] font-bold text-text-primary leading-[1.08] tracking-tight mb-5"
           initial={{ opacity: 0, y: 36 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, delay: 0.12, ease: [0.21, 1.04, 0.58, 1] }}
@@ -118,7 +118,7 @@ export function Hero() {
 
         {/* Sub-headline */}
         <motion.p
-          className="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed mb-10"
+          className="text-base sm:text-lg text-text-secondary max-w-xl mx-auto leading-relaxed mb-8 px-2 sm:px-0"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.3 }}
@@ -157,7 +157,7 @@ export function Hero() {
 
         {/* Rotating stats strip */}
         <motion.div
-          className="mt-14 flex flex-wrap items-center justify-center gap-6 sm:gap-10"
+          className="mt-10 flex flex-wrap items-center justify-center gap-6 sm:gap-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.85, duration: 0.6 }}
